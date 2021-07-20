@@ -1,5 +1,15 @@
 <template>
   <div>
+ 
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+          <li>
+            <router-link to="/" tag="a">Home</router-link>
+          </li>
+        </ul>
+      </nav>
+   
+
     <input
       type="text"
       v-model="query"
@@ -9,13 +19,12 @@
     />
     <div class="result">
       <aside class="menu">
-        <ul class="menu-list mt-2">
-            <transition-group name="slide-fade" tag="ul">
-
+        <ul class="mt-2 menu-list">
+          <transition-group name="slide-fade" tag="ul">
             <li
-            :v-if="searchResults > 0"
+              :v-if="searchResults > 0"
               v-for="(item, index) in searchResults"
-              :key="index"
+              :key="'c' + index"
             >
               <router-link
                 tag="a"
@@ -23,8 +32,7 @@
                 >{{ item.name }}</router-link
               >
             </li>
-            </transition-group>
-
+          </transition-group>
         </ul>
       </aside>
     </div>
@@ -49,3 +57,20 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+nav {
+  background-color: #eeeeee;
+  padding: 10px 15px;
+}
+
+ul li a {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #5bc299;
+}
+
+ul li a:hover {
+  color: #68daac;
+}
+</style>
