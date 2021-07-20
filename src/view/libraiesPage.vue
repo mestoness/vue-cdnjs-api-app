@@ -1,6 +1,12 @@
 <template>
   <div class="container mt-5 pb-3 p-4" v-if="libariesDetail.name">
-    <h1 class="title is-4">Authors</h1>
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li class="is-active"><a href="#" aria-current="page">{{ libariesDetail.name }}</a></li>
+        </ul>
+      </nav>
+      <h1 class="title is-4">Authors</h1>
     <div v-for="(item, i) in libariesDetail.authors" :key="i" class="mb-3">
       <div><b>Name</b> : {{ item.name }}</div>
       <div>
@@ -41,3 +47,22 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+nav {
+  background-color: #F3F4F6;
+  padding: 20px 8px 20px 8px;
+}
+
+ul li a {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #34D399;
+}
+
+ul li a:hover {
+  color: #6EE7B7;
+
+}
+
+</style>

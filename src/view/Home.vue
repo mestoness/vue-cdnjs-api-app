@@ -3,7 +3,7 @@
     <input
       type="text"
       v-model="query"
-      placeholder="Search"
+      placeholder="Search any tech..."
       v-on:keyup.13="SearchSubmit"
       class="input is-primary"
     />
