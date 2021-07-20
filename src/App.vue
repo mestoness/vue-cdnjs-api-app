@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5 pb-3 p-1">
+  <div class="container p-1 pb-3">
     <transition name="slide-fade">
       <router-view></router-view>
     </transition>
@@ -20,4 +20,21 @@
 body {
   word-wrap: break-word;
 }
+::-webkit-scrollbar-track {
+    background-color: #D4D4D4;
+    border-radius: 10px;
+}
+*::-webkit-scrollbar {
+    width: 9px;
+    background-color: #D4D4D4
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #A5A5A5;
+    border-radius: 1px;
+}
+*::-webkit-scrollbar-corner {
+    background-color: #ecf1f6
+}
+
+
 </style>
