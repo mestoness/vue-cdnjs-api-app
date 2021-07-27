@@ -11,6 +11,7 @@ const store = new Vuex.Store({
   // actionstan commit edilen verileri state e aktaran kısım
   mutations: {
     searchCDN(state, fields) {
+      state.libariesPages = [];
       state.searchResults = fields;
     },
     libariesPages(state, detail) {
@@ -24,7 +25,7 @@ const store = new Vuex.Store({
       axios
         .get(`https://api.cdnjs.com/libraries?search=${query}`)
         .then((response) => {
-          context.commit("searchCDN", response.data.results);
+          context.commit("searchCDN", response.data);
         });
     },
     libariesPages(context, name) {

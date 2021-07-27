@@ -1,14 +1,12 @@
 <template>
   <div>
- 
-      <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-          <li>
-            <router-link to="/" tag="a">Home</router-link>
-          </li>
-        </ul>
-      </nav>
-   
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+      <ul>
+        <li>
+          <router-link to="/" tag="a">Home</router-link>
+        </li>
+      </ul>
+    </nav>
 
     <input
       type="text"
@@ -18,12 +16,15 @@
       class="input is-primary"
     />
     <div class="result">
+      <div v-if="searchResults.total == 0" style="padding:10px 0">
+        Sonuç Bulunamadı
+      </div>
       <aside class="menu">
         <ul class="mt-2 menu-list">
-          <transition-group name="slide-fade" tag="ul">
+          <transition-group name="slide-fade">
             <li
               :v-if="searchResults > 0"
-              v-for="(item, index) in searchResults"
+              v-for="(item, index) in searchResults.results"
               :key="'c' + index"
             >
               <router-link

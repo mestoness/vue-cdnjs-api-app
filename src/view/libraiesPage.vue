@@ -1,5 +1,6 @@
 <template>
-  <div class="container p-4 pb-3" v-if="libariesDetail.name">
+  <div class="container p-4 pb-3">
+    <div  v-if="libariesDetail.name">
     <nav class="breadcrumb" aria-label="breadcrumbs">
       <ul>
         <li>
@@ -52,6 +53,8 @@
         }}/{{ files }}
       </div>
     </div>
+    </div>
+    <div v-else>Yükleniyor</div>
   </div>
 </template>
 <script>
